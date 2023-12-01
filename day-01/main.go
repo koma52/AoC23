@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"day-01/part1"
+	"day-01/part2"
 )
 
 func main() {
@@ -26,4 +27,5 @@ func main() {
 	}
 
 	fmt.Println(part1.Part1(words))
+	fmt.Println(part2.Part2(words))
 }
