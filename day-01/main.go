@@ -1,12 +1,29 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"log"
+	"os"
 
 	"day-01/part1"
 )
 
 func main() {
-	fmt.Println("Main")
-	part1.Part1()
+	f, err := os.Open("input1.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer f.Close()
+
+	var words = []string{}
+
+	scanner := bufio.NewScanner(f)
+
+	for scanner.Scan() {
+		words = append(words, scanner.Text())
+	}
+
+	fmt.Println(part1.Part1(words))
 }
